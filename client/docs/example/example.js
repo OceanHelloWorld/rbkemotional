@@ -17,11 +17,15 @@ window.angular.module('exampleApp', [
     }
     $scope.user={
       name:"",
-      status:""
+      status:"",
+      comment:""
+    }
+    $scope.changeComment = function(comment) {
+      $scope.user.comment = comment;
     }
     $scope.changedValue = function(name) {
       $scope.user.name=name;
-    console.log(name);
+      console.log(name);
     }
     $scope.title = new Date();
     $scope.text = 'Please click here to get your data';
@@ -31,18 +35,18 @@ window.angular.module('exampleApp', [
     "Omar","Qusay","Radwan","Rashad","Sara","Wafaa","Tahani","Walaa","Waleed Assaf","Walid Haj","walid dalabeah",
       "Yahye","Yazeed","Zaid"];
     $scope.call = function () {
-
      $http({
       method: 'POST',
       async:false,
       url: '/Notification',
       data:{
         Status:$scope.user.status,
-        Name:$scope.user.name
+        Name:$scope.user.name,
+        Comment:$scope.user.comment
       }
     })
      .then(function (res) {
-      console.log('your data has beev saved')
+      console.log('your data has been saved')
       
     })
      .catch(function(error) {
@@ -81,7 +85,6 @@ window.angular.module('exampleApp', [
                       console.log(error.message)
                     } else {
                       console.log('Notification Shown.');
-
                       setTimeout(function hideNotification() {
 
                         console.log('Hiding notification....');

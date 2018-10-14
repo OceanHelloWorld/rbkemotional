@@ -3,31 +3,44 @@
     <div class="modal-content">
       <div class="modal-body">
         <form>
-          <div class="form-group">
+          <!-- Get studentName from the previous login page -->
+            <h4>Hello {{user.name = "Blah Blah"}}</h4>
+          <!-- <div class="form-group">
             <label for="recipient-name" class="col-form-label"> <strong> Your name: </strong></label>
             <select ng-model="selectedName" ng-options="x for x in names" ng-change="changedValue(selectedName)">
             </select>
-          </div>
+          </div> -->
 
-        </div>
-
-
-
-        <label for="recipient-name" class="col-form-label"><strong> How do you feel  today? </strong> </label>
-        {{user}} 
+        <label for="recipient-name" class="col-form-label"><strong> How do you feel today? </strong> </label>
         <div class="form-group">
-          <img src="imgs/5.png" ng-model='happy' ng-click="click(5)" >
-          <img src="imgs/3.png" ng-model='fine' ng-click="click(4)">
-          <img src="imgs/33.png" ng-model='meh' ng-click="click(3)">
-          <img src="imgs/2.png" ng-model='down' ng-click="click(2)">
-          <img src="imgs/1.png" ng-model='depressed' ng-click="click(1)">
-
-
+          <div ng-app="image" ng-init="src1='imgs/happy.png'" style = "display:inline">
+            <img class = "emotionBtn" data-ng-src="{{src1}}" id="img1" ng-click="src1='imgs/checkmark.png'; src2='imgs/fine.png'; 
+            src3='imgs/meh.png'; src4='imgs/down.png'; src5='imgs/depressed.png'; click(5)" ng-model='happy'>
+          </div>
+          <div ng-app="image" ng-init="src2='imgs/fine.png'"  style = "display:inline">
+            <img class = "emotionBtn" data-ng-src="{{src2}}" id="img2" ng-click="src2='imgs/checkmark.png'; src1='imgs/happy.png';
+            src3='imgs/meh.png'; src4='imgs/down.png'; src5='imgs/depressed.png'; click(4)" ng-model='fine'>
+          </div>
+          <div ng-app="image" ng-init="src3='imgs/meh.png'"  style = "display:inline">
+            <img class = "emotionBtn" data-ng-src="{{src3}}" id="img3" ng-click="src1='imgs/happy.png'; src2='imgs/fine.png'; 
+            src4='imgs/down.png'; src5='imgs/depressed.png';src3='imgs/checkmark.png'; click(3)" ng-model='meh'>
+          </div>
+          <div ng-app="image" ng-init="src4='imgs/down.png'"  style = "display:inline">
+            <img class = "emotionBtn" data-ng-src="{{src4}}" id="img4" ng-click="src1='imgs/happy.png'; src2='imgs/fine.png'; 
+            src3='imgs/meh.png'; src5='imgs/depressed.png';src4='imgs/checkmark.png'; click(2)" ng-model='down'>
+          </div>
+          <div ng-app="image" ng-init="src5='imgs/depressed.png'"  style = "display:inline">
+            <img class = "emotionBtn" data-ng-src="{{src5}}" id="img5" ng-click="src1='imgs/happy.png'; src2='imgs/fine.png'; 
+            src3='imgs/meh.png'; src4='imgs/down.png'; src5='imgs/checkmark.png'; click(1)" ng-model='depressed'>
+          </div>              
         </div>
+        <h4>Additional Comment: </h4>
+          <textarea type="text" cols="200" rows="8" ng-model="someText"/>
       </form>
     </div>
-    <div  class="modal-footer" >
-      <button type="button" class="btn btn-primary" ng-click="call(user.name,user.status);test('Thank you')">Submit</button>
+    <!-- Assign studentName to the real name from login page -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" ng-click="changeComment(someText); call(user.name,user.status,user.comment); test('Thank you')">Submit</button>
     </div>
   </div>
 </div>

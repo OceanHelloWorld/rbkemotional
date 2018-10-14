@@ -26,11 +26,13 @@ app.post('/Notification',function(req,res){
 	var data=req.body
 	var Name=data.Name;
 	var Status=data.Status;
+	var Comment=data.Comment;
 	// console.log('hanan',Name,Status)
 	var newInput = {
 		_id : new mongoose.Types.ObjectId(),
 		status:Status,
- 		name:Name	
+		name:Name,
+		comment:Comment 	
  	}
  	// console.log('hanan',newInput)
  	models.User.create(newInput)

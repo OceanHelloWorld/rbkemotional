@@ -11,6 +11,7 @@ var userSchema = new Schema({
 	_id: Schema.Types.ObjectId,
 	status: Number,
 	name: String,
+	comment: String,
 	create_date:{
 		type: Date,
 		default: Date.now
