@@ -68,8 +68,8 @@ window.angular.module('exampleApp', [
             // var hoursTime = ModifiedTime[4]
 
             function Notification(){
-              webNotification.showNotification("Emotional Notification" , {
-                body: 'Please click here to get your data',
+              webNotification.showNotification("Survey Notification" , {
+                body: 'Please click here for the Emtional Health Survey',
                 onClick: function onNotificationClicked() {
                   console.log('Notification clicked.');
                   $dialog.dialog({}).open('modalContent.html')
@@ -97,8 +97,9 @@ window.angular.module('exampleApp', [
 
                 var now = new Date();
                 console.log(now.getHours())
+                // !!! delete after
+                Notification();
                 if ( (now.getHours() === 11) || (now.getHours() === 15 ) ) {
-
                   Notification();
                 }
                      now = new Date();                  // allow for time passing

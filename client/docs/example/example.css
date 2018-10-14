@@ -38,6 +38,12 @@ body {
   background-color: rgba(47,47,47,0.98);
 }
 
+#notificationBtn {
+  content:url(../imgs/rbklogo.png);
+  height: 10px;
+  border-color: rgba(47,47,47,0.98);
+}
+
 /* Interactive RBK logo */
 body,
 html {
