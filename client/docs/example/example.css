@@ -1,3 +1,14 @@
+body {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  background-color: rgba(47, 47, 47, 0.98);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .notification-form {
   padding: 10px;
   width: 60%;
@@ -19,3 +30,138 @@ img{
   height: 100px;
   width: 400px;
 }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(47,47,47,0.98);
+}
+
+/* Interactive RBK logo */
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+p {
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 6em;
+  font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 3em;
+  }
+}
+p span {
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  -webkit-font-smoothing: antialiased;
+}
+p span::before, p span::after {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  transform-origin: left top;
+  transition: all ease-out .3s;
+  content: attr(data-text);
+  display: block;
+}
+p span::before {
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+p span::after {
+  z-index: 2;
+  color: #ea4c89;
+  text-shadow: -1px 0 1px #ea4c89, 1px 0 1px #fff;
+  transform: rotateY(-40deg);
+}
+p span:hover::before {
+  transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+p span:hover::after {
+  transform: rotateY(-10deg);
+}
+p span + span {
+  margin-left: .3em;
+}
+
+/* Emotional Health Survey jumping text */
+h1 {
+  height: 10px;
+}
+
+h1 span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  -webkit-animation: bounce .3s ease infinite alternate;
+          animation: bounce .3s ease infinite alternate;
+  font-family: 'Titan One';
+  font-size: 40px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #ea4c89,
+               0 2px 0 #ea4c89,
+               0 3px 0 #ea4c89,
+               0 4px 0 transparent,
+               0 5px 0 transparent,
+               0 6px 6px rgba(0, 0, 0, .4);
+}
+
+h1 span:nth-child(2) { -webkit-animation-delay: .1s; animation-delay: .1s; }
+h1 span:nth-child(3) { -webkit-animation-delay: .2s; animation-delay: .2s; }
+h1 span:nth-child(4) { -webkit-animation-delay: .3s; animation-delay: .3s; }
+h1 span:nth-child(5) { -webkit-animation-delay: .4s; animation-delay: .4s; }
+h1 span:nth-child(6) { -webkit-animation-delay: .5s; animation-delay: .5s; }
+h1 span:nth-child(7) { -webkit-animation-delay: .6s; animation-delay: .6s; }
+h1 span:nth-child(8) { -webkit-animation-delay: .7s; animation-delay: .7s; }
+
+h1 span:nth-child(9) { -webkit-animation-delay: .8s; animation-delay: .8s; }
+
+
+@-webkit-keyframes bounce {
+  100% {
+    top: -10px;
+    text-shadow: 0 1px 0 #ea4c89,
+                 0 2px 0 #ea4c89,
+                 0 3px 0 #ea4c89,
+                 0 4px 0 #ea4c89,
+                 0 5px 0 #ea4c89,
+                 0 20px 10px rgba(0, 0, 0, .2);
+  }
+}
+
+@keyframes bounce {
+  100% {
+    top: -10px;
+    text-shadow: 0 1px 0 #ea4c89,
+                 0 2px 0 #ea4c89,
+                 0 3px 0 #ea4c89,
+                 0 4px 0 #ea4c89,
+                 0 5px 0 #ea4c89,
+                 0 6px 0 #ea4c89,
+                 0 7px 0 #ea4c89,
+                 0 8px 0 #ea4c89,
+                 0 9px 0 #ea4c89,
+                 0 50px 25px rgba(0, 0, 0, .2);
+  }
+}
+
+
+/* additional components with breaker class changes to new line */
+
+.breaker {
+  display:block;
+  width:30%;
+  height:100;
+ }
